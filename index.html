@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tushar – Data Analyst</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#f3f5f9;--surface:#fff;--ink:#14213d;--muted:#5b667d;--accent:#2f5bea;--hi:#f2a33a;--line:#d9deea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1626;--surface:#172036;--ink:#eaeefb;--muted:#9aa6c2;--accent:#7b9bff;--line:#2a3652}}
+:root[data-theme="dark"]{--bg:#0f1626;--surface:#172036;--ink:#eaeefb;--muted:#9aa6c2;--accent:#7b9bff;--line:#2a3652}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.6}
+main{max-width:960px;margin:0 auto;padding:0 20px}
+section{padding:48px 0;border-top:1px solid var(--line)}
+h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;font-weight:800;margin:0 0 16px;max-width:14ch}
+h2{font-size:1.5rem;margin:0 0 20px}
+p{margin:0 0 12px;max-width:62ch}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center;padding:64px 0 48px}
+.muted{color:var(--muted)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;border:2px solid var(--accent);color:var(--accent)}
+.btn.main{background:var(--accent);color:var(--bg)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.chart svg{width:100%;height:auto;display:block}
+.chart text{fill:var(--muted);font-size:11px;font-family:inherit}
+.bar{fill:var(--accent);opacity:.35}
+.bar.hi{fill:var(--hi);opacity:1}
+.projects{display:grid;gap:16px}
+.proj{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:8px;padding:20px}
+.proj h3{margin:0 0 8px;font-size:1.15rem}
+.proj ul{margin:0 0 10px;padding-left:20px}
+.tools{color:var(--accent);font-weight:600;font-size:.9rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.skills h3{font-size:1rem;margin:0 0 6px}
+.skills p{color:var(--muted);margin:0}
+.job{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--line)}
+footer{padding:32px 0 48px;border-top:1px solid var(--line);color:var(--muted)}
+.progress{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:3px;background:var(--hi);transform:scaleX(0);transform-origin:left;z-index:10}
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease,translate .25s ease,border-left-color .25s ease}
+.js .reveal.in{opacity:1;transform:none}
+.js .bar{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .chart.in .bar{transform:scaleY(1)}
+.js .chart.in .bar:nth-of-type(2){transition-delay:.1s}.js .chart.in .bar:nth-of-type(3){transition-delay:.2s}.js .chart.in .bar:nth-of-type(4){transition-delay:.3s}.js .chart.in .bar:nth-of-type(5){transition-delay:.4s}.js .chart.in .bar:nth-of-type(6){transition-delay:.5s}.js .chart.in .bar:nth-of-type(7){transition-delay:.6s}
+.proj{transition:transform .25s ease,border-left-color .25s ease}
+.proj:hover{translate:6px 0;border-left-color:var(--hi)}
+.skills > div:hover{translate:0 -6px}
+.type{font-size:1.15rem;font-weight:600}
+.type b{color:var(--accent)}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--hi);margin-left:3px;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+h2::after{content:"";display:block;height:4px;width:48px;background:var(--hi);margin-top:8px;border-radius:2px}
+.js h2::after{width:0;transition:width .8s .3s ease}
+.js h2.in::after{width:48px}
+.trend{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.js .trend{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.4s .7s ease}
+.js .chart.in .trend{stroke-dashoffset:0}
+@media (max-width:720px){.hero{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<main>
+<header class="hero">
+  <div>
+    <p class="muted">Tushar · Entry-level Data Analyst · Delhi, India</p>
+    <h1>I turn raw data into clear insights.</h1>
+    <p class="type">I work with <b id="tw">Power BI dashboards</b><span class="caret"></span></p>
+    <p>Entry-level data analyst with hands-on experience in Excel, SQL, Power BI and Python. I enjoy cleaning data, finding the story in it and presenting it so people can make better decisions.</p>
+    <div class="btns">
+      <a class="btn main" href="#projects">See projects</a>
+      <a class="btn" href="#contact">Contact me</a>
+    </div>
+  </div>
+  <div class="chart" role="img" aria-label="Illustrative bar chart with one bar highlighted">
+    <svg viewBox="0 0 320 200">
+      <line x1="10" y1="170" x2="310" y2="170" stroke="currentColor" opacity=".2"/>
+      <rect class="bar" x="20" y="110" width="30" height="60"/>
+      <rect class="bar" x="62" y="100" width="30" height="70"/>
+      <rect class="bar" x="104" y="105" width="30" height="65"/>
+      <rect class="bar" x="146" y="90" width="30" height="80"/>
+      <rect class="bar hi" x="188" y="40" width="30" height="130"/>
+      <rect class="bar" x="230" y="55" width="30" height="115"/>
+      <rect class="bar" x="272" y="50" width="30" height="120"/>
+      <text x="20" y="188">Jan</text><text x="104" y="188">Mar</text><text x="188" y="188">May</text><text x="272" y="188">Jul</text>
+      <text x="20" y="24">Find the one number that matters</text>
+      <path class="trend" d="M35 110 L77 100 L119 105 L161 90 L203 40 L245 55 L287 50"/>
+    </svg>
+  </div>
+</header>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <article class="proj">
+      <h3>HR Analytics Dashboard</h3>
+      <ul>
+        <li>Built an interactive dashboard to explore employee attrition and workforce trends.</li>
+        <li>Created KPIs that present HR data in a clear, accessible visual format.</li>
+      </ul>
+      <span class="tools">Power BI</span>
+    </article>
+    <article class="proj">
+      <h3>Weather API Data Analysis</h3>
+      <ul>
+        <li>Collected weather data from an API for analysis.</li>
+        <li>Analysed the data with Python and visualised the key trends.</li>
+      </ul>
+      <span class="tools">Python</span>
+    </article>
+  </div>
+  <div class="btns"><a class="btn" href="https://github.com/tushar986809-lang">More on GitHub</a></div>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <div><h3>Data analysis</h3><p>Excel (data cleaning, PivotTables), SQL (joins, filtering, aggregations)</p></div>
+    <div><h3>Business intelligence</h3><p>Power BI (dashboards, basic DAX), data visualisation</p></div>
+    <div><h3>Programming</h3><p>Python (Pandas, NumPy) for basic analysis</p></div>
+    <div><h3>Data preparation</h3><p>Power Query, data cleaning, data transformation</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Education</h2>
+  <div class="job"><span><b>Bachelor’s degree (in progress)</b>, University of Delhi, School of Open Learning</span><span class="muted">2024 – 2028</span></div>
+  <div class="job"><span><b>Class XII, Commerce</b>, CR Saini Sr. Sec. Public School, Delhi</span><span class="muted">2022 – 2024</span></div>
+  <p class="muted" style="margin-top:16px">Languages: Hindi, English (basic)</p>
+</section>
+
+<section id="contact">
+  <h2>Let’s connect</h2>
+  <p>Open to internships and entry-level data analyst roles.</p>
+  <div class="btns">
+    <a class="btn main" href="mailto:tushar986809@gmail.com">tushar986809@gmail.com</a>
+    <a class="btn" href="https://github.com/tushar986809-lang">GitHub</a>
+  </div>
+</section>
+<footer>© 2026 Tushar</footer>
+</main>
+<script>
+(function(){
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+document.documentElement.classList.add('js');
+var els=document.querySelectorAll('.hero h1,.hero p,.hero .btns,.chart,h2,.proj,.skills > div,.job,#contact p,#contact .btns');
+els.forEach(function(el){
+  el.classList.add('reveal');
+  var i=Array.prototype.indexOf.call(el.parentNode.children,el);
+  el.style.transitionDelay=Math.min(i,4)*90+'ms';
+});
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.style.transitionDelay='0s';},1500);}});
+},{threshold:.15});
+els.forEach(function(el){io.observe(el);});
+var bar=document.getElementById('progress');
+function upd(){
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
+  var ch=document.querySelector('.chart');
+  ch.style.translate='0 '+Math.min(window.scrollY*0.15,60)+'px';
+}
+var words=['Power BI dashboards','SQL queries','Python analysis','Excel reports'],wi=0,ci=0,del=false,tw=document.getElementById('tw');
+function typeIt(){
+  var w=words[wi];ci+=del?-1:1;tw.textContent=w.slice(0,ci);
+  var t=del?40:80;
+  if(!del&&ci===w.length){del=true;t=1400;}
+  else if(del&&ci===0){del=false;wi=(wi+1)%words.length;t=300;}
+  setTimeout(typeIt,t);
+}
+tw.textContent='';typeIt();
+window.addEventListener('scroll',upd,{passive:true});
+upd();
+})();
+</script>
+</body>
+</html>
