@@ -1,177 +1,407 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tushar – Data Analyst</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tushar | Data Analyst Portfolio</title>
+<meta name="description" content="Entry-level Data Analyst skilled in Python, SQL, Power BI and Excel. Projects: E-commerce Data Pipeline, HR Analytics Dashboard, Weather API Analysis.">
 <style>
-:root{--bg:#f3f5f9;--surface:#fff;--ink:#14213d;--muted:#5b667d;--accent:#2f5bea;--hi:#f2a33a;--line:#d9deea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1626;--surface:#172036;--ink:#eaeefb;--muted:#9aa6c2;--accent:#7b9bff;--line:#2a3652}}
-:root[data-theme="dark"]{--bg:#0f1626;--surface:#172036;--ink:#eaeefb;--muted:#9aa6c2;--accent:#7b9bff;--line:#2a3652}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.6}
-main{max-width:960px;margin:0 auto;padding:0 20px}
-section{padding:48px 0;border-top:1px solid var(--line)}
-h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;font-weight:800;margin:0 0 16px;max-width:14ch}
-h2{font-size:1.5rem;margin:0 0 20px}
-p{margin:0 0 12px;max-width:62ch}
-.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center;padding:64px 0 48px}
-.muted{color:var(--muted)}
-.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-.btn{padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;border:2px solid var(--accent);color:var(--accent)}
-.btn.main{background:var(--accent);color:var(--bg)}
-.btn:focus-visible,a:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
-.chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
-.chart svg{width:100%;height:auto;display:block}
-.chart text{fill:var(--muted);font-size:11px;font-family:inherit}
-.bar{fill:var(--accent);opacity:.35}
-.bar.hi{fill:var(--hi);opacity:1}
-.projects{display:grid;gap:16px}
-.proj{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:8px;padding:20px}
-.proj h3{margin:0 0 8px;font-size:1.15rem}
-.proj ul{margin:0 0 10px;padding-left:20px}
-.tools{color:var(--accent);font-weight:600;font-size:.9rem}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.skills h3{font-size:1rem;margin:0 0 6px}
-.skills p{color:var(--muted);margin:0}
-.job{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--line)}
-footer{padding:32px 0 48px;border-top:1px solid var(--line);color:var(--muted)}
-.progress{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:3px;background:var(--hi);transform:scaleX(0);transform-origin:left;z-index:10}
-.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease,translate .25s ease,border-left-color .25s ease}
-.js .reveal.in{opacity:1;transform:none}
-.js .bar{transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
-.js .chart.in .bar{transform:scaleY(1)}
-.js .chart.in .bar:nth-of-type(2){transition-delay:.1s}.js .chart.in .bar:nth-of-type(3){transition-delay:.2s}.js .chart.in .bar:nth-of-type(4){transition-delay:.3s}.js .chart.in .bar:nth-of-type(5){transition-delay:.4s}.js .chart.in .bar:nth-of-type(6){transition-delay:.5s}.js .chart.in .bar:nth-of-type(7){transition-delay:.6s}
-.proj{transition:transform .25s ease,border-left-color .25s ease}
-.proj:hover{translate:6px 0;border-left-color:var(--hi)}
-.skills > div:hover{translate:0 -6px}
-.type{font-size:1.15rem;font-weight:600}
-.type b{color:var(--accent)}
-.caret{display:inline-block;width:2px;height:1.1em;background:var(--hi);margin-left:3px;vertical-align:-3px;animation:blink 1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-h2::after{content:"";display:block;height:4px;width:48px;background:var(--hi);margin-top:8px;border-radius:2px}
-.js h2::after{width:0;transition:width .8s .3s ease}
-.js h2.in::after{width:48px}
-.trend{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-.js .trend{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 1.4s .7s ease}
-.js .chart.in .trend{stroke-dashoffset:0}
-@media (max-width:720px){.hero{grid-template-columns:1fr}}
+  :root{
+    --bg:#f6f9fd; --card:#ffffff; --text:#1b2430; --muted:#5b6675; --line:#e2e8f0;
+    --accent:#1f4e79; --accent2:#2e86c1; --accent-soft:#e8f0f8; --accent-text:#ffffff;
+    --shadow:0 10px 30px rgba(31,78,121,.12);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e1520; --card:#162130; --text:#e8edf3; --muted:#9aa6b5; --line:#263445;
+      --accent:#6fb1e8; --accent2:#9ad0f5; --accent-soft:#1c2c3f; --accent-text:#0e1520;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1520; --card:#162130; --text:#e8edf3; --muted:#9aa6b5; --line:#263445;
+    --accent:#6fb1e8; --accent2:#9ad0f5; --accent-soft:#1c2c3f; --accent-text:#0e1520;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:70px}
+  body{margin:0;background:var(--bg);color:var(--text);overflow-x:hidden;
+       font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       transition:background .3s,color .3s}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+
+  /* scroll progress bar */
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:20;
+            background:linear-gradient(90deg,var(--accent),var(--accent2))}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);
+             backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .brand{font-weight:800;letter-spacing:1px;color:var(--accent)}
+  nav{display:flex;align-items:center;gap:4px}
+  nav a.lnk{padding:6px 11px;border-radius:8px;color:var(--muted);font-size:15px;transition:.2s}
+  nav a.lnk:hover,nav a.lnk.active{color:var(--accent);background:var(--accent-soft)}
+  #theme{border:1px solid var(--line);background:var(--card);color:var(--text);width:36px;height:36px;
+         border-radius:10px;cursor:pointer;font-size:17px;margin-left:6px;transition:.2s}
+  #theme:hover{border-color:var(--accent);transform:rotate(15deg)}
+  @media(max-width:560px){nav a.lnk.hide-sm{display:none}}
+
+  /* hero */
+  .hero{position:relative;padding:70px 0 50px;overflow:hidden}
+  .blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.35;z-index:0;
+        animation:float 14s ease-in-out infinite}
+  .blob.b1{width:320px;height:320px;background:var(--accent2);top:-80px;right:-60px}
+  .blob.b2{width:260px;height:260px;background:var(--accent);bottom:-80px;left:-80px;animation-delay:-6s}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-24px) scale(1.12)}}
+  .hello{display:inline-block;padding:5px 13px;border-radius:999px;background:var(--accent-soft);
+         color:var(--accent);font-weight:700;font-size:14px;margin-bottom:14px}
+  .hero h1{font-size:clamp(40px,9vw,68px);line-height:1.05;margin:0 0 10px;
+           background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;
+           background-clip:text;color:transparent}
+  .role{font-size:clamp(19px,4vw,26px);font-weight:700;margin:0 0 14px;min-height:1.5em}
+  .cursor{display:inline-block;width:2px;height:1.05em;background:var(--accent);margin-left:3px;
+          vertical-align:-3px;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .lead{max-width:620px;color:var(--muted);margin:0 0 24px;font-size:17px}
+  .btns{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-block;padding:12px 20px;border-radius:12px;font-weight:700;font-size:15px;
+       border:1.5px solid var(--accent);transition:transform .2s,box-shadow .2s,background .2s}
+  .btn.primary{background:var(--accent);color:var(--accent-text)}
+  .btn.ghost{color:var(--accent)}
+  .btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:6px 0 10px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+  .stat .n{font-size:34px;font-weight:800;color:var(--accent);line-height:1.1}
+  .stat .l{color:var(--muted);font-size:14px}
+
+  section{padding:40px 0}
+  h2{font-size:26px;margin:0 0 6px;color:var(--accent)}
+  h2::after{content:"";display:block;width:46px;height:4px;border-radius:4px;margin-top:6px;
+            background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  .sub{color:var(--muted);margin:10px 0 22px;font-size:15.5px}
+
+  /* pipeline */
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px}
+  .step{flex:1 1 180px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;
+        position:relative;transition:transform .2s,border-color .2s}
+  .step:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .step .num{font-size:12.5px;font-weight:800;color:var(--accent);letter-spacing:1px}
+  .step h3{margin:2px 0 4px;font-size:17px}
+  .step p{margin:0;color:var(--muted);font-size:14.5px}
+  .arrow{display:flex;align-items:center;color:var(--accent);font-size:22px;font-weight:800;
+         animation:nudge 1.6s ease-in-out infinite}
+  @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+  @media(max-width:700px){.arrow{display:none}}
+
+  /* project cards */
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  a.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
+         border-radius:16px;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;
+         transform-style:preserve-3d}
+  a.card:hover,a.card:focus-visible{border-color:var(--accent);box-shadow:var(--shadow);outline:none}
+  .shot{background:linear-gradient(135deg,var(--accent-soft),var(--card));aspect-ratio:16/9;display:flex;
+        align-items:center;justify-content:center;color:var(--accent);font-weight:800;font-size:18px;overflow:hidden}
+  .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+  a.card:hover .shot img{transform:scale(1.06)}
+  .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
+  .body h3{margin:0;font-size:19px}
+  .body p{margin:0;color:var(--muted);font-size:15px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-size:12.5px;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:700}
+  .open{margin-top:auto;color:var(--accent);font-weight:800;font-size:15px}
+  .open span{display:inline-block;transition:transform .2s}
+  a.card:hover .open span{transform:translateX(6px)}
+
+  /* skills */
+  .skillgrid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .skillbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;transition:.2s}
+  .skillbox:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .skillbox h3{margin:0 0 10px;font-size:16px;color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--bg);font-size:14px;
+        transition:.2s}
+  .chip:hover{background:var(--accent);color:var(--accent-text);border-color:var(--accent);transform:scale(1.06)}
+
+  /* timeline */
+  .timeline{position:relative;padding-left:26px;border-left:3px solid var(--line)}
+  .tl{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+  .tl::before{content:"";position:absolute;left:-36px;top:20px;width:15px;height:15px;border-radius:50%;
+              background:var(--accent);border:3px solid var(--bg)}
+  .tl b{display:block}
+  .tl span{color:var(--muted);font-size:14.5px}
+
+  /* contact */
+  .contact{background:linear-gradient(135deg,var(--accent),var(--accent2));color:var(--accent-text);
+           border-radius:20px;padding:34px 24px;text-align:center}
+  .contact h2{color:inherit}
+  .contact h2::after{margin:6px auto 0;background:currentColor;opacity:.6}
+  .contact p{margin:10px 0 18px;opacity:.95}
+  .contact .btn{background:var(--accent-text);color:var(--accent);border-color:var(--accent-text)}
+  footer{padding:26px 0 46px;color:var(--muted);font-size:14px;text-align:center}
+
+  #top-btn{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+           background:var(--accent);color:var(--accent-text);font-size:20px;font-weight:800;opacity:0;
+           pointer-events:none;transition:opacity .3s,transform .2s;z-index:15;box-shadow:var(--shadow)}
+  #top-btn.show{opacity:1;pointer-events:auto}
+  #top-btn:hover{transform:translateY(-3px)}
+
+  /* scroll reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;
+          transition-delay:var(--d,0s)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.settled{transition:transform .2s,border-color .2s,box-shadow .2s,background .2s,color .2s;transition-delay:0s}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
 </style>
 </head>
 <body>
-<div class="progress" id="progress"></div>
-<main>
-<header class="hero">
-  <div>
-    <p class="muted">Tushar · Entry-level Data Analyst · Delhi, India</p>
-    <h1>I turn raw data into clear insights.</h1>
-    <p class="type">I work with <b id="tw">Power BI dashboards</b><span class="caret"></span></p>
-    <p>Entry-level data analyst with hands-on experience in Excel, SQL, Power BI and Python. I enjoy cleaning data, finding the story in it and presenting it so people can make better decisions.</p>
-    <div class="btns">
-      <a class="btn main" href="#projects">See projects</a>
-      <a class="btn" href="#contact">Contact me</a>
-    </div>
-  </div>
-  <div class="chart" role="img" aria-label="Illustrative bar chart with one bar highlighted">
-    <svg viewBox="0 0 320 200">
-      <line x1="10" y1="170" x2="310" y2="170" stroke="currentColor" opacity=".2"/>
-      <rect class="bar" x="20" y="110" width="30" height="60"/>
-      <rect class="bar" x="62" y="100" width="30" height="70"/>
-      <rect class="bar" x="104" y="105" width="30" height="65"/>
-      <rect class="bar" x="146" y="90" width="30" height="80"/>
-      <rect class="bar hi" x="188" y="40" width="30" height="130"/>
-      <rect class="bar" x="230" y="55" width="30" height="115"/>
-      <rect class="bar" x="272" y="50" width="30" height="120"/>
-      <text x="20" y="188">Jan</text><text x="104" y="188">Mar</text><text x="188" y="188">May</text><text x="272" y="188">Jul</text>
-      <text x="20" y="24">Find the one number that matters</text>
-      <path class="trend" d="M35 110 L77 100 L119 105 L161 90 L203 40 L245 55 L287 50"/>
-    </svg>
+<div id="progress"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">TUSHAR</a>
+    <nav>
+      <a class="lnk" href="#projects">Projects</a>
+      <a class="lnk hide-sm" href="#pipeline">Pipeline</a>
+      <a class="lnk" href="#skills">Skills</a>
+      <a class="lnk hide-sm" href="#education">Education</a>
+      <a class="lnk" href="#contact">Contact</a>
+      <button id="theme" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+    </nav>
   </div>
 </header>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    <article class="proj">
-      <h3>HR Analytics Dashboard</h3>
-      <ul>
-        <li>Built an interactive dashboard to explore employee attrition and workforce trends.</li>
-        <li>Created KPIs that present HR data in a clear, accessible visual format.</li>
-      </ul>
-      <span class="tools">Power BI</span>
-    </article>
-    <article class="proj">
-      <h3>Weather API Data Analysis</h3>
-      <ul>
-        <li>Collected weather data from an API for analysis.</li>
-        <li>Analysed the data with Python and visualised the key trends.</li>
-      </ul>
-      <span class="tools">Python</span>
-    </article>
-  </div>
-  <div class="btns"><a class="btn" href="https://github.com/tushar986809-lang">More on GitHub</a></div>
-</section>
+<main id="top">
 
-<section>
-  <h2>Skills</h2>
-  <div class="skills">
-    <div><h3>Data analysis</h3><p>Excel (data cleaning, PivotTables), SQL (joins, filtering, aggregations)</p></div>
-    <div><h3>Business intelligence</h3><p>Power BI (dashboards, basic DAX), data visualisation</p></div>
-    <div><h3>Programming</h3><p>Python (Pandas, NumPy) for basic analysis</p></div>
-    <div><h3>Data preparation</h3><p>Power Query, data cleaning, data transformation</p></div>
+  <div class="hero">
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="wrap">
+      <span class="hello reveal">👋 Hi, I'm</span>
+      <h1 class="reveal" style="--d:.08s">Tushar</h1>
+      <p class="role reveal" style="--d:.16s"><span id="typed"></span><span class="cursor"></span></p>
+      <p class="lead reveal" style="--d:.24s">I turn messy data into clear insights. I clean data in Python, analyze it in SQL, and present it in interactive Power BI dashboards. Tap any project to open it directly.</p>
+      <div class="btns reveal" style="--d:.32s">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn ghost" href="Tushar_Data_Analyst_Resume.pdf">Download Resume</a>
+        <a class="btn ghost" href="https://github.com/tushar986809-lang" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
   </div>
-</section>
 
-<section>
-  <h2>Education</h2>
-  <div class="job"><span><b>Bachelor’s degree (in progress)</b>, University of Delhi, School of Open Learning</span><span class="muted">2024 – 2028</span></div>
-  <div class="job"><span><b>Class XII, Commerce</b>, CR Saini Sr. Sec. Public School, Delhi</span><span class="muted">2022 – 2024</span></div>
-  <p class="muted" style="margin-top:16px">Languages: Hindi, English (basic)</p>
-</section>
+  <div class="wrap">
 
-<section id="contact">
-  <h2>Let’s connect</h2>
-  <p>Open to internships and entry-level data analyst roles.</p>
-  <div class="btns">
-    <a class="btn main" href="mailto:tushar986809@gmail.com">tushar986809@gmail.com</a>
-    <a class="btn" href="https://github.com/tushar986809-lang">GitHub</a>
+    <div class="stats">
+      <div class="stat reveal"><div class="n" data-count="3">0</div><div class="l">Projects</div></div>
+      <div class="stat reveal" style="--d:.08s"><div class="n" data-count="4">0</div><div class="l">Core tools</div></div>
+      <div class="stat reveal" style="--d:.16s"><div class="n" data-count="1">0</div><div class="l">End-to-end pipeline</div></div>
+    </div>
+
+    <section id="projects">
+      <h2 class="reveal">Projects</h2>
+      <p class="sub reveal">Tap a card to open the project on GitHub.</p>
+      <div class="grid">
+
+        <!-- Project 1: verified from the GitHub repo -->
+        <a class="card tilt reveal" href="https://github.com/tushar986809-lang/-Ecommerce-DataPipeline" target="_blank" rel="noopener">
+          <div class="shot">
+            <img src="https://github.com/tushar986809-lang/-Ecommerce-DataPipeline/raw/main/dasboard.png.png"
+                 alt="E-commerce dashboard preview" loading="lazy"
+                 onerror="this.remove();" >
+            <noscript>Python → SQL → Power BI</noscript>
+          </div>
+          <div class="body">
+            <h3>E-commerce Data Pipeline</h3>
+            <p>End-to-end pipeline on a messy sales dataset: cleaned with Pandas, loaded into MySQL, analyzed with SQL, and shown in a Power BI dashboard with revenue, order and customer insights.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">MySQL</span><span class="tag">Power BI</span></div>
+            <span class="open">Open project <span>&rarr;</span></span>
+          </div>
+        </a>
+
+        <!-- Project 2: REPLACE the href below with the exact repo link of your HR Analytics project -->
+        <a class="card tilt reveal" style="--d:.1s" href="https://github.com/tushar986809-lang?tab=repositories" target="_blank" rel="noopener">
+          <div class="shot">📊 Power BI Dashboard</div>
+          <div class="body">
+            <h3>HR Analytics Dashboard</h3>
+            <p>Interactive dashboard to explore employee attrition and workforce trends, with KPIs that present HR data in a clear visual format.</p>
+            <div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">KPIs</span></div>
+            <span class="open">Open project <span>&rarr;</span></span>
+          </div>
+        </a>
+
+        <!-- Project 3: REPLACE the href below with the exact repo link of your Weather API project -->
+        <a class="card tilt reveal" style="--d:.2s" href="https://github.com/tushar986809-lang?tab=repositories" target="_blank" rel="noopener">
+          <div class="shot">🌦️ Python + API</div>
+          <div class="body">
+            <h3>Weather API Data Analysis</h3>
+            <p>Collected weather data from an API and analyzed it with Python to visualize key trends.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">API</span><span class="tag">Data Visualization</span></div>
+            <span class="open">Open project <span>&rarr;</span></span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <section id="pipeline">
+      <h2 class="reveal">How my E-commerce pipeline works</h2>
+      <p class="sub reveal">Three steps from raw CSV to dashboard.</p>
+      <div class="flow">
+        <div class="step reveal"><div class="num">STEP 1</div><h3>Clean with Python</h3><p>Pandas fixes prices and quantities, fills missing values, handles outliers and removes duplicate orders.</p></div>
+        <div class="arrow reveal">&rarr;</div>
+        <div class="step reveal" style="--d:.1s"><div class="num">STEP 2</div><h3>Analyze with SQL</h3><p>MySQL queries for revenue, category sales, top customers, payment methods and monthly trend.</p></div>
+        <div class="arrow reveal">&rarr;</div>
+        <div class="step reveal" style="--d:.2s"><div class="num">STEP 3</div><h3>Visualize in Power BI</h3><p>Interactive dashboard with KPI cards, slicers and charts for quick decisions.</p></div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="reveal">Skills</h2>
+      <p class="sub reveal">Tools I use for data work.</p>
+      <div class="skillgrid">
+        <div class="skillbox reveal"><h3>Languages &amp; Databases</h3>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">SQLAlchemy</span><span class="chip">SQL</span><span class="chip">MySQL</span></div></div>
+        <div class="skillbox reveal" style="--d:.08s"><h3>Business Intelligence</h3>
+          <div class="chips"><span class="chip">Power BI</span><span class="chip">Basic DAX</span><span class="chip">Power Query</span><span class="chip">Dashboards &amp; KPIs</span><span class="chip">Data Visualization</span></div></div>
+        <div class="skillbox reveal" style="--d:.16s"><h3>Spreadsheets</h3>
+          <div class="chips"><span class="chip">Microsoft Excel</span><span class="chip">PivotTables</span><span class="chip">Data Cleaning</span></div></div>
+        <div class="skillbox reveal" style="--d:.24s"><h3>Data Preparation</h3>
+          <div class="chips"><span class="chip">Missing values</span><span class="chip">Duplicates</span><span class="chip">Inconsistent formats</span><span class="chip">API data collection</span></div></div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="reveal">Education</h2>
+      <p class="sub reveal">Where I'm learning.</p>
+      <div class="timeline">
+        <div class="tl reveal"><b>B.Com (Hons)</b><span>University of Delhi, School of Open Learning (DU-SOL) &middot; 2024 &ndash; Present</span></div>
+        <div class="tl reveal" style="--d:.1s"><b>Class XII (Commerce)</b><span>CR Saini Sr. Sec. Public School, Delhi &middot; 2022 &ndash; 2024</span></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact reveal">
+        <h2>Let's connect</h2>
+        <p>Open to entry-level Data Analyst roles. Send me a message or take a look at my code.</p>
+        <div class="btns" style="justify-content:center">
+          <a class="btn" href="mailto:tushar986809@gmail.com">Email me</a>
+          <a class="btn" href="https://github.com/tushar986809-lang" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="Tushar_Data_Analyst_Resume.pdf">Resume</a>
+        </div>
+      </div>
+    </section>
+
   </div>
-</section>
-<footer>© 2026 Tushar</footer>
 </main>
+
+<footer>&copy; <span id="yr"></span> Tushar &middot; Built with HTML &amp; CSS</footer>
+<button id="top-btn" aria-label="Back to top">&uarr;</button>
+
 <script>
 (function(){
-if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
-document.documentElement.classList.add('js');
-var els=document.querySelectorAll('.hero h1,.hero p,.hero .btns,.chart,h2,.proj,.skills > div,.job,#contact p,#contact .btns');
-els.forEach(function(el){
-  el.classList.add('reveal');
-  var i=Array.prototype.indexOf.call(el.parentNode.children,el);
-  el.style.transitionDelay=Math.min(i,4)*90+'ms';
-});
-var io=new IntersectionObserver(function(es){
-  es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(function(){t.style.transitionDelay='0s';},1500);}});
-},{threshold:.15});
-els.forEach(function(el){io.observe(el);});
-var bar=document.getElementById('progress');
-function upd(){
-  var h=document.documentElement.scrollHeight-window.innerHeight;
-  bar.style.transform='scaleX('+(h>0?Math.min(window.scrollY/h,1):0)+')';
-  var ch=document.querySelector('.chart');
-  ch.style.translate='0 '+Math.min(window.scrollY*0.15,60)+'px';
-}
-var words=['Power BI dashboards','SQL queries','Python analysis','Excel reports'],wi=0,ci=0,del=false,tw=document.getElementById('tw');
-function typeIt(){
-  var w=words[wi];ci+=del?-1:1;tw.textContent=w.slice(0,ci);
-  var t=del?40:80;
-  if(!del&&ci===w.length){del=true;t=1400;}
-  else if(del&&ci===0){del=false;wi=(wi+1)%words.length;t=300;}
-  setTimeout(typeIt,t);
-}
-tw.textContent='';typeIt();
-window.addEventListener('scroll',upd,{passive:true});
-upd();
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // theme toggle (remembered per browser; safe if storage is blocked)
+  var root = document.documentElement, btn = document.getElementById('theme');
+  function isDark(){
+    var t = root.getAttribute('data-theme');
+    if(t) return t === 'dark';
+    return window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function paint(){ btn.textContent = isDark() ? '☀️' : '🌙'; }
+  try{ var saved = localStorage.getItem('theme'); if(saved) root.setAttribute('data-theme', saved); }catch(e){}
+  paint();
+  btn.addEventListener('click', function(){
+    var next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try{ localStorage.setItem('theme', next); }catch(e){}
+    paint();
+  });
+
+  // typing effect
+  var el = document.getElementById('typed');
+  var words = ['Entry-Level Data Analyst', 'Python · SQL · Power BI', 'Turning data into insights'];
+  if(reduce){ el.textContent = words[0]; }
+  else{
+    var w = 0, c = 0, del = false;
+    (function tick(){
+      var word = words[w];
+      el.textContent = word.slice(0, c);
+      if(!del && c < word.length){ c++; setTimeout(tick, 70); }
+      else if(!del){ del = true; setTimeout(tick, 1400); }
+      else if(c > 0){ c--; setTimeout(tick, 35); }
+      else { del = false; w = (w + 1) % words.length; setTimeout(tick, 300); }
+    })();
+  }
+
+  // scroll reveal + counters
+  var revealEls = document.querySelectorAll('.reveal');
+  function countUp(n){
+    var target = +n.getAttribute('data-count'), t0 = null;
+    if(reduce){ n.textContent = target; return; }
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts - t0) / 1100, 1);
+      n.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          (function(t){ setTimeout(function(){ t.classList.add('settled'); }, 1000); })(e.target);
+          var n = e.target.querySelector('[data-count]');
+          if(n) countUp(n);
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:.15});
+    revealEls.forEach(function(x){ io.observe(x); });
+  }else{
+    revealEls.forEach(function(x){ x.classList.add('in'); });
+    document.querySelectorAll('[data-count]').forEach(function(n){ n.textContent = n.getAttribute('data-count'); });
+  }
+
+  // progress bar, back-to-top, active nav link
+  var bar = document.getElementById('progress'), up = document.getElementById('top-btn');
+  var links = document.querySelectorAll('nav a.lnk'), secs = [];
+  links.forEach(function(a){ var s = document.querySelector(a.getAttribute('href')); if(s) secs.push([a, s]); });
+  function onScroll(){
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    up.classList.toggle('show', h.scrollTop > 500);
+    var y = h.scrollTop + 120, cur = null;
+    secs.forEach(function(p){ if(p[1].offsetTop <= y) cur = p[0]; });
+    links.forEach(function(a){ a.classList.toggle('active', a === cur); });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  up.addEventListener('click', function(){ window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'}); });
+
+  // 3D tilt on project cards (desktop pointers only)
+  if(!reduce && window.matchMedia && matchMedia('(hover:hover)').matches){
+    document.querySelectorAll('.tilt').forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        card.style.transform = 'perspective(800px) rotateY(' + (x * 7) + 'deg) rotateX(' + (-y * 7) + 'deg) translateY(-4px)';
+      });
+      card.addEventListener('mouseleave', function(){ card.style.transform = ''; });
+    });
+  }
 })();
 </script>
 </body>
